@@ -26,14 +26,14 @@ $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <?php if (count($users) > 0): ?>
         <?php foreach ($users as $user): ?>
             <tr>
-                <td><?= htmlspecialchars($user['id']) ?></td>
-                <td><?= htmlspecialchars($user['name']) ?></td>
-                <td><?= htmlspecialchars($user['email']) ?></td>
-                <td><?= htmlspecialchars($user['phone']) ?></td>
-                <td><?= date('d M Y, h:i A', strtotime($user['created_at'])) ?></td>
+                <td><?php htmlspecialchars($user['id']) ?></td>
+                <td><?php htmlspecialchars($user['name']) ?></td>
+                <td><?php htmlspecialchars($user['email']) ?></td>
+                <td><?php htmlspecialchars($user['phone']) ?></td>
+                <td><?php date('d M Y, h:i A', strtotime($user['created_at'])) ?></td>
                 <td>
-                    <button class="btn btn-sm btn-warning editBtn" data-id="<?= $user['id'] ?>">Edit</button>
-                    <button class="btn btn-sm btn-danger deleteBtn" data-id="<?= $user['id'] ?>">Delete</button>
+                    <button class="btn btn-sm btn-warning editBtn" data-id="<?php $user['id'] ?>">Edit</button>
+                    <button class="btn btn-sm btn-danger deleteBtn" data-id="<?php $user['id'] ?>">Delete</button>
                 </td>
             </tr>
         <?php endforeach; ?>
